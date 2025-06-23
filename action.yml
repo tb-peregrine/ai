@@ -5,6 +5,9 @@ inputs:
   slack_token:
     description: 'Slack Bot Token'
     required: false
+  resend_api_key:
+    description: 'Resend API Key'
+    required: false
   google_application_credentials:
     description: 'Google Cloud credentials JSON string'
     required: false
@@ -96,6 +99,7 @@ runs:
         TINYBIRD_TOKEN: ${{ inputs.tinybird_token }}
         # https://www.tinybird.co/docs/api-reference?#regions-and-endpoints
         TINYBIRD_HOST: ${{ inputs.tinybird_host }}
+        RESEND_API_KEY: ${{ inputs.resend_api_key }}
         
       run: |
         cd ${{ inputs.working_directory }}
