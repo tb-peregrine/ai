@@ -19,6 +19,6 @@ jobs:
           tinybird_token: ${{ secrets.TINYBIRD_TOKEN }}
           tinybird_host: ${{ secrets.TINYBIRD_HOST }}
           prompt: |
-            Run the analysis and notify me in the #tmp-birdwatcher-demo Slack channel
+            Run the analysis and notify me in the #tmp-birdwatcher-demo-1 Slack channel
           mission: ecommerce_daily_summary
           model: 'gemini-2.0-flash'
