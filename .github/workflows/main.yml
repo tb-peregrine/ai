@@ -1,0 +1,21 @@
+name: Birdwatcher Ecommerce Summary
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # Runs daily at 9:00 UTC
+  workflow_dispatch:      # Allows manual triggering
+
+jobs:
+  ecommerce-summary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tinybirdco/ai@main
+        with:
+          slack_token: ${{ secrets.SLACK_TOKEN }}
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          tinybird_token: ${{ secrets.TINYBIRD_TOKEN }}
+          tinybird_host: ${{ secrets.TINYBIRD_HOST }}
+          prompt: |
+            Run the analysis and email to cameronarcher@tinybird.co
+          mission: ecommerce_daily_summary
+          model: 'claude-4-sonnet-20250514'
