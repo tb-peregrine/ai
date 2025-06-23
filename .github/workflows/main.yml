@@ -15,7 +15,6 @@ jobs:
           anthropic_api_key: ${{secrets.ANTHROPIC_API_KEY}}
           tinybird_token: ${{ secrets.TINYBIRD_TOKEN }}
           tinybird_host: ${{ secrets.TINYBIRD_HOST }}
-          prompt: |
-            Run the analysis and notify me in the #tmp-birdwatcher-demo-1 Slack channel
-          mission: ecommerce_daily_summary
+          prompt: 'Calculate top 5 products by total sales in the last 7 days and send to #tmp-birdwatcher-demo-1 Slack channel'
+          mission: base
           model: 'claude-4-sonnet-20250514'
